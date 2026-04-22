@@ -10,90 +10,61 @@
 
 #include <stdio.h>
 
-void sum (int x[],int N){
-    int i;
-    int sum = 0;
-    for (i = 0; i <N; i ++){
-        sum = sum + x[i];
+void sum(int x[], int N){
+    int total = 0;
+    for (int i = 0; i < N; i++){
+        total += x[i];
     }
-    printf("SUM %d\n",sum);
-    return;
+    printf("SUM %d\n", total);
 }
 
-void Average (int x[], int N){
-    int i;
-    int sum = 0;
-    for (i = 0; i<N; i++){
-        sum = sum + x[i];
+void Average(int x[], int N){
+    int total = 0;
+    for (int i = 0; i < N; i++){
+        total += x[i];
     }
-    double avg = (float)sum/N;
-    printf("AVG %.2f\n",avg);
-    return;
+    double avg = (double) total / N;
+    printf("AVG %.2f\n", avg);
 }
 
-void Max (int x[], int N){
-    int i;
-    for (i = 0; i<N-1;i++){
-        for (int j = 0; j <N-i-1; j++){
-            if (x[j]>x[j+1]){
-                int temp = x[j];
-                x[j] = x[j+1];
-                x[j+1] = temp;
-            }
+int max1(int x[], int N){
+    int maks = x[0];
+    for (int i = 1; i < N; i++){
+        if (x[i] > maks){
+            maks = x[i];
         }
     }
-    printf("MAX %d\n",x[N-1]);
-    return;
+    return maks;
 }
 
+void Max(int x[], int N){
+    int maks = max1(x, N);
+    printf("MAX %d\n", maks);
+}
 
-int max1 (int x[], int N){
-    int i;
-    for (i = 0; i<N-1;i++){
-        for (int j = 0; j <N-i-1; j++){
-            if (x[j]>x[j+1]){
-                int temp = x[j];
-                x[j] = x[j+1];
-                x[j+1] = temp;
-            }
+void Idx(int x[], int N, int n){
+    for (int i = 0; i < N; i++){
+        if (x[i] == n){
+            printf("IDX %d\n", i);
+            return;
         }
     }
-    return (x[N-1]);
 }
-
-void Idx (int x[],int N, int n){
-    int ketemu =0;
-    for (int i = 0; i<N; i++){
-        if (x[i]==n){
-            if (x[i]= x[i+1]){
-                printf("IDX %d\n",i-1);
-            }else {
-                printf("IDX %d\n",i);
-            }
-            ketemu = 1;
-            break;
-        }
-    } if (ketemu == 0){
-        printf("data tidak ada di dalam array\n");
-    }
-    return ;
-}
-
 
 int main(){
     int n;
-    scanf ("%d",&n);
+    scanf("%d", &n);
     int x[n];
 
-    for (int k =0; k<n;k++){
-        scanf("%d",&x[k]);
+    for (int k = 0; k < n; k++){
+        scanf("%d", &x[k]);
     }
 
-    sum (x,n);
-    Average (x,n);
-    Max (x,n);
-    int a = max1(x,n);
-    Idx (x,n,a);
+    sum(x, n);
+    Average(x, n);
+    Max(x, n);
+    int a = max1(x, n);
+    Idx(x, n, a);
 
     return 0;
 }
