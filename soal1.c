@@ -82,8 +82,9 @@ void Idx (int x[],int N, int n){
 
 int main(){
     int n;
-    int x[n];
     scanf ("%d",&n);
+    int x[n];
+
     for (int k =0; k<n;k++){
         scanf("%d",&x[k]);
     }
