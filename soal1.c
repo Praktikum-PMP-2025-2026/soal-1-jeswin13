@@ -16,7 +16,7 @@ void sum (int x[],int N){
     for (i = 0; i <N; i ++){
         sum = sum + x[i];
     }
-    printf("SUM %d",sum);
+    printf("SUM %d\n",sum);
     return;
 }
 
@@ -27,7 +27,7 @@ void Average (int x[], int N){
         sum = sum + x[i];
     }
     double avg = (float)sum/N;
-    printf("AVG %.2f",avg);
+    printf("AVG %.2f\n",avg);
     return;
 }
 
@@ -42,7 +42,7 @@ void Max (int x[], int N){
             }
         }
     }
-    printf("MAX %d",x[N-1]);
+    printf("MAX %d\n",x[N-1]);
     return;
 }
 
@@ -66,9 +66,9 @@ void Idx (int x[],int N, int n){
     for (int i = 0; i<N; i++){
         if (x[i]==n){
             if (x[i]= x[i+1]){
-                printf("IDX %d",i-1);
+                printf("IDX %d\n",i-1);
             }else {
-                printf("IDX %d",i);
+                printf("IDX %d\n",i);
             }
             ketemu = 1;
             break;
