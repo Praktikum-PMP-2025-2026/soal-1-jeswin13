@@ -40,6 +40,11 @@ int main() {
     int x[n];
     for (int i = 0; i < n; i++) {
         scanf("%d", &x[i]);
+    scanf ("%d",&n);
+    int x[n];
+
+    for (int k =0; k<n;k++){
+        scanf("%d",&x[k]);
     }
 
     int sum, max, idx;
